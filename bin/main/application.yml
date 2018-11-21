@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: userservice
+server:
+  port: 7000
+info:
+  application:
+    name: userservice
+    version: 1.0
+    description: Yasen User Service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    registerWithEureka: true
+    fetchRegistry: true
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.vlue}}
